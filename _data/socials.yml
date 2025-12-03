@@ -1,0 +1,24 @@
+# - platform: Email
+#   url: "mailto:harpatel@cs.stonybrook.edu"
+#   icon: "fas fa-envelope"
+#   username: "harpatel@cs.stonybrook.edu"
+
+- platform: GitHub
+  url: "https://github.com/harshvp1621"
+  icon: "fab fa-github"
+  username: "harshvp1621"
+
+- platform: LinkedIn
+  url: "https://linkedin.com/in/harsh1621"
+  icon: "fab fa-linkedin"
+  username: "Harshvardhan Patel"
+
+- platform: Google Scholar
+  url: "https://scholar.google.com/citations?user=QPgDADAAAAAJ&hl=en"
+  icon: "fas fa-graduation-cap"
+  username: "Google Scholar"
+
+- platform: CV
+  url: "/assets/docs/harsh_resume.pdf"
+  icon: "fas fa-file-alt"
+  username: "Download Resume"

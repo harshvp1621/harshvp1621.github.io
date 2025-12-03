@@ -1,12 +1,206 @@
 ---
-title: "The Harsh Reality"
-layout: home
-author_profile: true
-
-header:
-    overlay_image: /assets/images/cyber_map.jpg
-    caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-
-excerpt: "My notes on the security of the digital world"
-
+layout: null
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} | {{ site.author.name }}</title>
+    <meta name="description" content="{{ site.author.bio }}">
+    <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="profile-header">
+            <div class="profile-pic-container">
+                <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="profile-pic">
+                <a href="mailto:{{ site.email }}" class="profile-email" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="profile-info">
+                <h1>{{ site.author.name }}</h1>
+                <p class="bio">{{ site.author.bio }}</p>
+                {% if site.author.long_bio %}
+                <div class="long-bio">
+                    {{ site.author.long_bio | markdownify }}
+                </div>
+                {% endif %}
+
+                <div class="social-links">
+                    {% for link in site.data.socials %}
+                    <a href="{{ link.url }}" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="{{ link.icon }}"></i>
+                        <span>{{ link.platform }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </header>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="publications-list">
+                {% for pub in site.data.publications %}
+                <div class="publication-item">
+                    <span class="pub-title">{{ pub.title }}</span>
+                    <div class="pub-authors">{{ pub.authors }}</div>
+                    <div class="pub-venue">
+                        {{ pub.venue }} {% if pub.acceptance_rate %}(Acceptance Rate: {{ pub.acceptance_rate }}){% endif %}
+                        {% if pub.paper_url %}
+                        <a href="{{ pub.paper_url | relative_url }}" target="_blank" style="margin-left: 0.5rem; color: var(--accent-color);">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        {% endif %}
+                        {% if pub.code_url %}
+                        <a href="{{ pub.code_url }}" target="_blank" style="margin-left: 0.5rem; color: var(--accent-color);">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Research Experience Section -->
+        <section id="research-experience">
+            <details open>
+                <summary class="section-summary">
+                    <h2>Research Experience</h2>
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </summary>
+                <div class="timeline">
+                    {% for job in site.data.experience.research %}
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <details>
+                            <summary class="job-summary">
+                                <div class="job-header">
+                                    <div>
+                                        <span class="company">{{ job.company }}</span>
+                                        <span class="role">{{ job.role }}</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span class="date">{{ job.date }}</span>
+                                        <span class="job-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                                    </div>
+                                </div>
+                                {% if job.location %}
+                                <div class="job-location">
+                                    <i class="fas fa-map-marker-alt"></i> {{ job.location }}
+                                </div>
+                                {% endif %}
+                            </summary>
+
+                            <div class="job-details">
+                                <ul>
+                                    {% for item in job.description %}
+                                    <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% if job.projects %}
+                                <div style="margin-top: 1rem;">
+                                    {% for project in job.projects %}
+                                    <div style="margin-bottom: 0.5rem;">
+                                        <strong style="color: #d4d4d4;">{{ project.name }}</strong>
+                                        <ul>
+                                            {% for detail in project.details %}
+                                            <li>{{ detail }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                                {% if job.links %}
+                                <div style="margin-top: 0.5rem;">
+                                    {% for link in job.links %}
+                                    <a href="{{ link.url }}" target="_blank" style="font-size: 0.9rem; color: var(--accent-color);">
+                                        <i class="fas fa-link" style="margin-right: 0.3rem;"></i>{{ link.label }}
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </details>
+                    </div>
+                    {% endfor %}
+                </div>
+            </details>
+        </section>
+
+        <!-- Industry Experience Section -->
+        <section id="industry-experience">
+            <details open>
+                <summary class="section-summary">
+                    <h2>Industry Experience</h2>
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </summary>
+                <div class="timeline">
+                    {% for job in site.data.experience.industry %}
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <details>
+                            <summary class="job-summary">
+                                <div class="job-header">
+                                    <div>
+                                        <span class="company">{{ job.company }}</span>
+                                        <span class="role">{{ job.role }}</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span class="date">{{ job.date }}</span>
+                                        <span class="job-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                                    </div>
+                                </div>
+                                {% if job.location %}
+                                <div class="job-location">
+                                    <i class="fas fa-map-marker-alt"></i> {{ job.location }}
+                                </div>
+                                {% endif %}
+                            </summary>
+
+                            <div class="job-details">
+                                <ul>
+                                    {% for item in job.description %}
+                                    <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% if job.projects %}
+                                <div style="margin-top: 1rem;">
+                                    {% for project in job.projects %}
+                                    <div style="margin-bottom: 0.5rem;">
+                                        <strong style="color: #d4d4d4;">{{ project.name }}</strong>
+                                        <ul>
+                                            {% for detail in project.details %}
+                                            <li>{{ detail }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </details>
+                    </div>
+                    {% endfor %}
+                </div>
+            </details>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Built with Jekyll.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

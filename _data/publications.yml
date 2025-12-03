@@ -1,0 +1,6 @@
+- title: "Supply Chain Reaction: Enhancing the Precision of Vulnerability Triage using Code Reachability Information"
+  authors: "<u>Harshvardhan Patel</u>, Alexander Snit, Michalis Polychronakis"
+  venue: "Annual Computer Security Applications Conference (ACSAC), 2025"
+  year: 2025
+  paper_url: "/assets/papers/vpchecker_acsac.pdf"
+  code_url: "https://github.com/harshvp1621/VPChecker"
