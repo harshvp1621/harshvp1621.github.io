@@ -61,11 +61,10 @@ industry:
           - "Optimized and secured containerized Python applications by creating minimal, hardened, and distroless Docker images, achieving 85% size reduction."
 
   - company: Max Secure Software
-    role: Software Development Intern
+    role: SDE Intern
     location: Pune, India
     date: May 2018 - Jul 2018
     projects:
       - name: "Malware Detection"
-        details:
         details:
           - "Developed a random forest-based malware classifier for Windows executables integrated as a DLL, and a proof-of-concept Android malware detector."
