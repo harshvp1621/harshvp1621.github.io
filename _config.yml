@@ -61,11 +61,12 @@ plugins:
 
 author:
   name   : "Harshvardhan Patel"
+  affiliation: "Stony Brook University"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Computer Science PhD Student @Stony Brook University"
+  bio    : "Computer Science PhD Student"
   long_bio: >-
     I am a 4th year PhD student at Stony Brook University, advised by [Prof. Michalis Polychronakis](https://www3.cs.stonybrook.edu/~mikepo/).
-    My research interests lie in the intersection of Systems Security and Program Analysis.
+    My research interests lie in the intersection of Systems Security and Program Analysis. More recently I have also worked on creating agentic systems for security analysis and vulnerability triage.
 
   links:
     - label: "Website"

@@ -4,23 +4,23 @@ research:
     location: New York, USA
     date: May 2023 - Present
     advisor: Dr. Michalis Polychronakis
-    description:
-      - "Project: Function-level Vulnerability Triage for C/C++ binaries."
-      - "Used static binary analysis to compute function-level code reachability in vulnerable libraries to improve the precision of vulnerability-risk assessment for C/C++ binaries."
-      - "Conducted a large-scale code-reachability study on vulnerable C/C++ functions affected by 500+ publicly-disclosed CVEs reported across 24,000+ ELF64 binaries from 6,000+ Debian packages."
-      - "Insights showed that for 82% of these binaries, at least one CVE reported in their dependencies was unreachable."
-      - "Identified on average 30% unreachable vulnerabilities per binary which are falsely reported as reachable by existing scanners."
+    projects:
+      - name: "Software Supply Chain Security"
+        details:
+          - "Applying program analysis techniques to improve the precision of vulnerability-risk assessment for C/C++ binaries."
+      - name: "Container Security"
+        details:
+          - "Developing solutions to improve vulnerability-risk assessment for containerized applications."
 
   - company: de.ci.phe.red lab @ IIT Bhilai
     role: Project Scientist (Part-Time)
     location: Chhattisgarh, India
     date: Aug 2021 - Mar 2022
     advisor: Dr. Dhiman Saha
-    description:
-      - "Worked for the MEC 5G Test-Bed in collaboration with IIT Delhi."
-      - "Implemented secure boot solutions for embedded devices (Verified Boot and Measured Boot for Raspberry Pi 4 Model B)."
-      - "Used an external Trusted Platform Module (TPM 2.0) as the Hardware Root of Trust."
-      - "Patched U-Boot for RPi to accommodate TPM-based firmware authentication."
+    projects:
+      - name: "Secure Boot for Embedded Devices"
+        details:
+          - "Implemented TPM-based Verified and Measured Boot for Raspberry Pi 4 Model B by patching the U-Boot bootloader."
     links:
       - label: "Implementation Link"
         url: "https://github.com/harshvp1621/RPi-TPM-SecBoot"
@@ -30,40 +30,42 @@ industry:
     role: Security Engineering Intern
     location: Palo Alto, CA, USA
     date: May 2025 - Aug 2025
-    description:
-      - "Developed a multi-agent LLM workflow to analyze risks in software dependency upgrades and triage security alerts from static analysis tools across Tesla’s code repositories."
-      - "Implemented a static analysis pipeline for large codebases (> 700k LoC) to extract security-alert specific context – vulnerability reachability information and dependency trees."
-      - "Integrated the tool across 400+ codebases with 2700+ security alerts, significantly reducing alert triage and remediation time. Featured in Tesla’s internal Generative AI newsletter."
     projects:
-      - name: "Security and Reliability Tooling for Rust Codebases"
+      - name: "Agentic System for Reviewing Security Alerts"
         details:
-          - "Formally verified critical Rust functions using the Kani verification tool, identifying and patching undefined behavior in critical services."
-          - "Leveraged the dynamic analysis tool MIRI to detect undefined behavior in third-party dependencies used by internal Rust projects."
+          - "Developed an agentic system to analyze security alerts generated from static code analysis tools and identify false positives."
+      - name: "Static Analysis for Security and Reliability of Rust Codebases"
+        details:
+          - "Used Miri to discover undefined behavior in internal Rust codebases and third-party dependencies. Formally verified critical Rust functions using Kani."
 
-  - company: Atonarp Micro-Systems
+  - company: Atonarp
     role: Member of Technical Staff
     location: Bangalore, India
     date: Aug 2020 - Jul 2022
-    description:
-      - "Developed device drivers and patches to customize embedded Linux kernel and U-Boot bootloader for proprietary hardware."
-      - "Implemented custom Linux kernel module (using Linux RPMSG driver) to enable inter-processor communication for real-time data streaming between ARM Cortex-A (Linux) and Cortex-M (FreeRTOS) processors."
-      - "Developed applications to run on the real-time operating system FreeRTOS."
-      - "Established secure DevOps practices: built security-hardened Debian aarch64 images, maintained Docker build pipelines, and managed private Debian package repositories."
+    projects:
+      - name: "Embedded Linux & Firmware"
+        details:
+          - "Developed custom Linux device drivers, kernel modules for inter-processor communication (RPMSG), and FreeRTOS applications for proprietary hardware."
+      - name: "Secure DevOps"
+        details:
+          - "Established secure DevOps practices by building security-hardened Debian images and managing Docker pipelines and private repositories."
 
   - company: Bosch-RBEI
     role: Security Intern
     location: Bangalore, India
     date: May 2019 - Jul 2019
-    description:
-      - "Created minimal & hardened Linux Docker images from scratch for Python applications, achieving 85% size reduction."
-      - "Cythonized Python applications for performance optimization and developed automated build pipelines using Bash and Bazel."
-      - "Built security-focused distroless container images."
+    projects:
+      - name: "Container Security & Optimization"
+        details:
+        details:
+          - "Optimized and secured containerized Python applications by creating minimal, hardened, and distroless Docker images, achieving 85% size reduction."
 
   - company: Max Secure Software
     role: Software Development Intern
     location: Pune, India
     date: May 2018 - Jul 2018
-    description:
-      - "Developed and deployed a malware classifier for Windows executables using random forests algorithm (30+ features)."
-      - "Integrated the classifier as a Windows DLL to the company’s antivirus product."
-      - "Created a proof-of-concept for Android malware detection using features extracted from APK manifests and Dex files."
+    projects:
+      - name: "Malware Detection"
+        details:
+        details:
+          - "Developed a random forest-based malware classifier for Windows executables integrated as a DLL, and a proof-of-concept Android malware detector."
